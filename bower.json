@@ -18,6 +18,10 @@
     "angular": "~1.3.7",
     "normalize.css": "~3.0.2",
     "jquery": "~2.1.2",
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "~0.2.13",
+    "ng-Fx": "~1.0.5"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.8"
   }
 }

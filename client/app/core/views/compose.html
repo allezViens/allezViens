@@ -1,0 +1,31 @@
+
+<form class="compose" ng-controller="ComposeController">
+  <h1>Create</h1>
+
+  <div class="compose-role">
+      <input id="driver" ng-model="user.title" type="radio" name="role" value="driver" required>
+      <label for="driver">D</label>
+      <input id="passenger" ng-model="user.title" type="radio" name="role" value="passenger" required>
+      <label for="passenger">P</label>
+  </div>
+
+  <div class="compose-route">
+    <div class="row">
+      <span>Start</span>
+      <input type="text" ng-model="user.origin" name="origin" placeholder="Type a starting point" required>
+    </div>
+    <div class="row">
+      <span>End</span>
+      <input type="text" ng-model="user.destination" name="destination" placeholder="Type a destination" required> 
+    </div>
+  </div>
+
+  <div class="compose-id">
+    <span>Email</span>
+    <input type="text" ng-model="user.name" placeholder="yourname@email.com"> 
+  </div>
+
+  <div class="compose-submit">
+    <input type="submit" ng-click="vm.getUser(user)" value="Next">
+  </div>
+</form>

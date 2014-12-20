@@ -1,17 +1,14 @@
-angular.module('app', [
-  'ui.router',
-  'SearchController'
-])
+;(function(){
 
-.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  angular.module('app', [
+    'ui.router',
+    'core',
+    'core:ComposeController',
+    'core:DriverController',
+    'core:PassengerController',
+    'ngFx'
+  ])
 
-  $stateProvider
+}).call(this)
 
-  .state('map', {
-    url: '/',
-    templateUrl: 'app/search.html',
-    controller: 'SearchController'
-  })
 
-  $urlRouterProvider.otherwise('/');
-})

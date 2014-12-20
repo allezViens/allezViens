@@ -22,7 +22,7 @@ def drivers():
 	if (request.method == 'POST'):
 		if (request.headers['Content-Type'] == 'application/json'):
 			data = json.loads(request.data)
-			connect.createDriver(data['origin'], data['destination'],data['id'])
+			connect.createDriver(data['origin'], data['destination'], data['id'])
 			return 'Driver added to database'
 
 @app.route('/passengers', methods=['GET', 'POST'])
@@ -35,7 +35,8 @@ def passengers():
 	if (request.method == 'POST'):
 		if (request.headers['Content-Type'] == 'application/json'):
 			data = json.loads(request.data)
-			connect.createPassenger(data['origin'], data['destination'],data['id'])
+			connect.createPassenger(data['origin'], data['destination'], data['id'])
 			return 'Passenger added to database'
+
 if (__name__ == '__main__'):
     app.run()

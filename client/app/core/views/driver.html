@@ -1,0 +1,10 @@
+<div class="driver" ng-controller="DriverController">
+  <h1>Available Passengers</h1>
+
+  <div class="driver-role">
+        <div class="driver-passengers fx-fade-up fx-easing-sine" ng-repeat='passenger in driver.passengers'>
+          name: {{ passenger.name }}
+          start: {{ passenger.start }}
+          end: {{ passenger.end }}
+        </div>
+</div>

@@ -1,12 +1,26 @@
 $font-stack:    "Open Sans", sans-serif;
-$primary-color: #333;
+$green: rgba(136, 207, 48, 0.75);
+@import "mixins";
 
-* {
+// to make width inclusive of padding and margins, * applies to all elements
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 html {
-  font: 100% $font-stack;
+  font: 16px $font-stack;
+  -webkit-font-smoothing: antialiased;
 }
 
-@import "grid";
+// use as our main container, center on page with margin left/right: auto
+#container {
+  margin: 0 auto;
+  max-width: 53rem;
+  width: 90%;
+}
+
+@import "compose";
+
+@import "passenger";

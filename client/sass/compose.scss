@@ -1,0 +1,104 @@
+.compose {
+  h1 {
+    @include fontlight;
+    text-align: center;
+  }
+}
+
+.compose-block {
+  vertical-align: middle;
+  text-align: center;
+  padding: 5% 0;
+  margin: 2% 0;
+  width: 100%;
+  border: 1px solid lightgrey;
+}
+
+///////////////////////////////////
+
+.compose-role {
+  @extend .compose-block;
+  padding: 8% 0;
+
+  input[type=radio]{
+    display: none;
+  }
+
+  label {
+    @include noselect;
+    @include fontlight;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px 16px;
+    margin: 0 20px;
+    transition: border .3s;
+  }
+
+  input[type=radio]:checked+label {
+    border-color: black;
+  }
+}
+
+///////////////////////////////////
+
+.compose-route {
+  @extend .compose-block;
+  display: table;
+
+
+  .row {
+    display: table-row;
+  }
+
+  span {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+  }
+
+  input[type="text"] {
+    @include cleaninput;
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+///////////////////////////////////
+
+.compose-id {
+  @extend .compose-block;
+  display: table;
+
+  span {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+  }
+
+  input {
+    @include cleaninput;
+    display: inline-block;
+    width: 80%;
+  }
+}
+
+///////////////////////////////////
+
+.compose-submit {
+  @extend .compose-block;
+  border: none;
+
+  input {
+    @include noselect;
+    @include fontlight;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid $green;
+    background: none;
+  }
+
+}
+
