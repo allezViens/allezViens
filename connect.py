@@ -1,10 +1,14 @@
-from py2neo import Graph, watch, Node, Relationship, Path
+from py2neo import Graph, watch, Node, Relationship, Path, ServiceRoot
+import os
 
 #watch requests to db-server
 # watch("httpstream")
 
 # connect to localhost:7474
-graph = Graph()
+#graph = Graph()
+
+graphenedb_url = os.environ.get("GRAPHENEDB_URL"+"/", "http://localhost:7474/");
+graph = ServiceRoot(graphenedb_url).graph
 
 def createWaypoint( coordinates ):
   return graph.merge_one("Waypoint", "coordinates", coordinates)
