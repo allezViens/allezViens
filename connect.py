@@ -7,7 +7,7 @@ import os
 # connect to localhost:7474
 #graph = Graph()
 
-graphenedb_url = os.environ.get("GRAPHENEDB_URL"+"/", "http://localhost:7474/");
+graphenedb_url = os.environ.get("GRAPHENEDB_URL", "http://localhost:7474/");
 graph = ServiceRoot(graphenedb_url).graph
 
 def createWaypoint( coordinates ):
