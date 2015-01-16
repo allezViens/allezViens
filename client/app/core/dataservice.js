@@ -4,7 +4,7 @@
     .module('app.core')
     .factory('dataservice', dataservice);
 
-  function dataservice($http) {
+  function dataservice($http, RouterboxFactory, GoogleFactory) {
     var passengers = [];
     var drivers = [];
 
@@ -58,9 +58,10 @@
     }    
 
     // This should get users local coordinates somehow...
-    function getClientLoc(){
-      return [37.3333,-121.9000];
+    function getClientLoc(){      
+      $http.get('http://www.telize.com/geoip').success(function (data) {
+        GoogleFactory.initialize(data.latitude, data.longitude);
+      });
     }
-    
   }
 })();

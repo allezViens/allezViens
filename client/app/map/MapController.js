@@ -6,7 +6,7 @@
     .controller('MapCtrl', MapCtrl);
 
   /* ngInject */
-  function MapCtrl(GoogleFactory,RouteFactory,$scope) {
+  function MapCtrl(GoogleFactory,RouteFactory,$scope, dataservice) {
     var vm = this;
     $scope.sendMessage = function(){
       console.log('hi');
@@ -19,8 +19,6 @@
     // when user clicks 
 
     // Activate map
-    GoogleFactory.initialize(37.7833,-122.4167);
-
-    
+    dataservice.getClientLoc();    
   }
 })();
